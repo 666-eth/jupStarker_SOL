@@ -56,25 +56,49 @@ node JupVote.js
 
 # 
 
-账户加密
-库安装
-在终端输入npm install crypto readline-sync fast-csv
 
-程序配置
-打开accountEncrypt.js文件，将walletDataPath 和 outputDataPath 分别修改为自己的钱包路径和钱包保存路径，钱包文件和AirDropScript程序 data目录下的账户模板文件兼容：
+# 账户加密
 
+## 库安装
+
+在终端输入` npm install crypto readline-sync fast-csv `
+
+
+
+## 程序配置
+
+打开`accountEncrypt.js`文件，将walletDataPath 和 outputDataPath 分别修改为自己的钱包路径和钱包保存路径，钱包文件和AirDropScript程序 data目录下的账户模板文件兼容：
+
+``` javascript
 const walletDataPath = '/Users/lishuai/Documents/crypto/bockchainbot/StkTestWalletData.csv';  // 要加密的钱包路径
 const outputDataPath = '/Users/lishuai/Documents/crypto/bockchainbot/StkTestWalletData的副本.csv'; // 加密后的钱包保存路径
-程序运行
-在终端中使用 node accountEncrypt.js命令运行程序。
-当终端显示 “Please enter your password:” 时在终端输入要设置的密码按回车即可。
-查看加密后的输出文件， 程序中没有PrivateKey列，同时多出s、i、e、a等几个字段既为已经成功加密。
-解密测试
-程序配置
-打开accountDecryptUsing.js文件，将 walletDataPath修改为加密后的钱包路径。
 
+```
+
+
+
+## 程序运行
+
+1. 在终端中使用` node accountEncrypt.js`命令运行程序。
+2. 当终端显示 “Please enter your password:” 时在终端输入要设置的密码按回车即可。
+3. 查看加密后的输出文件， 程序中没有PrivateKey列，同时多出s、i、e、a等几个字段既为已经成功加密。
+
+
+
+# 解密测试
+
+## 程序配置
+
+打开`accountDecryptUsing.js`文件，将 walletDataPath修改为加密后的钱包路径。
+
+``` javascript
 const walletDataPath = '/Users/lishuai/Documents/crypto/bockchainbot/StkTestWalletData的副本.csv'; // 加密后的钱包保存路径
-程序运行
-在终端中使用 node accountDecryptoUsing.js命令运行程序。
-当终端显示 “Please enter your password:” 时在终端输入密码后按回车继续运行程序。
-如果密码正确，程序会在终端中打印钱包信息，核对一下信息是否正确。
+```
+
+
+
+## 程序运行
+
+1. 在终端中使用` node accountDecryptoUsing.js`命令运行程序。
+2. 当终端显示 “Please enter your password:” 时在终端输入密码后按回车继续运行程序。
+3. 如果密码正确，程序会在终端中打印钱包信息，核对一下信息是否正确。
